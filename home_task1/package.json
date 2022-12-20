@@ -1,0 +1,22 @@
+{
+  "name": "homework",
+  "version": "1.0.0",
+  "description": "Node JS mentoring program, homework for 1st module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "task1": "nodemon task1.js",
+    "task2": "nodemon task2.js"
+  },
+  "keywords": [
+    "basic_concepts"
+  ],
+  "author": "Natalia Popova",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "csvtojson": "^2.0.10"
+  }
+}
