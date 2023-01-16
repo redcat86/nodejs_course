@@ -3,5 +3,11 @@ type User = {
   login: string;
   password: string;
   age: number;
-  isDeleted: boolean;
+  isDeleted?: boolean;
+};
+
+type StatusResponse = {
+  status: "error" | "ok";
+  message: string;
+  response?: User | User[] | string;
 };
