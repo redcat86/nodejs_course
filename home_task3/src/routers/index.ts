@@ -1,6 +1,7 @@
 import express, { Request, Response, Application } from 'express';
 import { schemas } from '../../UserValidationSchema';
-import { DBConnection, UserModel } from '../models/UserModel';
+import { DBConnection } from '../data-access';
+import { UserModel } from '../models/UserModel';
 import { UserService } from '../services';
 
 type StatusResponse = {

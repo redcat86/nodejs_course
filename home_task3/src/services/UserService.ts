@@ -1,5 +1,6 @@
-import { Op } from 'sequelize';
-import { DBConnection, UserModel } from '../models/UserModel';
+import { DataTypes, Op } from 'sequelize';
+import { DBConnection } from '../data-access';
+import { UserModel } from '../models/UserModel';
 
 export type StatusMessage = {
   message: string;
@@ -10,6 +11,34 @@ export default class UserService {
   connection: DBConnection;
   constructor(connection: DBConnection) {
     this.connection = connection;
+
+    connection.defineModel(
+      'User',
+      {
+        id: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+          primaryKey: true,
+        },
+        login: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        password: {
+          type: DataTypes.STRING,
+          allowNull: false,
+        },
+        age: {
+          type: DataTypes.INTEGER,
+          allowNull: false,
+        },
+        isdeleted: {
+          type: DataTypes.BOOLEAN,
+          allowNull: true,
+        },
+      },
+      'user'
+    );
   }
 
   async getUserList() {
